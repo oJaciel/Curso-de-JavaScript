@@ -1,0 +1,46 @@
+<!--Exercício da aula de condições (parte 1)
+
+Teste de condicionais, utilizando sistema que mostra se é brasileiro ou estrangeiro, baseado no país que reside
+
+Adaptação do ex009.js, adaptado para HTML
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasileiro ou Estrangeiro</title>
+</head>
+<body>
+
+    <h1>Verificador de Brasileiro</h1>
+
+    <p>Em que país você reside:</p>
+    <input type="text" name="país" id="país">
+
+    <input type="button" value="Verificar" onclick="verificar()">
+
+    <div id="resultado"></div>
+
+    <script>
+
+        function verificar() {
+            var país = document.getElementById('país').value //Usando o .value após para captar o valor do campo de input, caso contrário não retornará o que está no campo
+
+            var resultado = document.getElementById('resultado')
+
+            resultado.innerHTML = `<p>País onde você reside: <b>${país}</b> </p>`
+
+            if (país == 'Brasil') {
+                resultado.innerHTML += `Você é brasileiro!`
+            } else {
+                resultado.innerHTML += `Você é estrangeiro!`
+            }
+        }
+        
+
+    </script>
+    
+</body>
+</html>

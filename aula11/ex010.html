@@ -1,0 +1,46 @@
+<!--Exercício da aula de condições (parte 1)
+
+Teste de condicionais, utilizando exemplo de comparador de limite de velocidade, verificando se velocidade está acima da permitida
+
+Adaptação do ex008.js, adaptado para HTML
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    
+    <h1>Sistema de Multas</h1>
+
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel">Km/h
+
+    <input type="button" value="Verificar" onclick="calcular()">
+
+    <div id="resultado"></div>
+
+    <script>
+        
+        function calcular() {
+            var txtvel = document.getElementById('txtvel')
+
+            var resultado = document.getElementById('resultado')
+
+            var vel = Number(txtvel.value) //Primeiro, dentro do parênteses, captando o valor da variável txt, depois convertendo para número
+
+            resultado.innerHTML = `<p>Sua velocidade é de <b>${vel}Km/h</b></p>`
+
+            if (vel > 60) {
+                resultado.innerHTML += `<p>Você está <b>multado</b> por excesso de velocidade!</p>`
+            }
+
+            resultado.innerHTML += `<p> Dirija sempre com cinto de segurança </p>`
+        }
+
+    </script>
+
+</body>
+</html>
